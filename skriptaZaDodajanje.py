@@ -1,20 +1,19 @@
-#for i in open('MOCK_DATA.csv'):
-              #i = i.split(',')
-
 import csv
 import random
 from datetime import date
-odpri = open('MOCK.csv','w')
+odpri = open('osebe.csv','w')
 statusi = ['študent', 'zaposlen', 'brezposeln']
 zakonski_stanovi = ['samski','poročen','vdovel','ločen','skupnost']
-#izobrazbe = ['1','2','3','4','5','6.1','6.2','7','8.1','8.2']
-with open('MOCK_DATA.csv') as f:
+regije = ['goriška', 'gorenjska', 'obalno-kraška', 'primorsko-notranjska',
+          'osrednjeslovenska', 'zasavska', 'jugovzhodna Slovenija', 'posavska', 'savinjska', 'koroška', 'podravska', 'pomurska']
+with open('osnova.csv') as f:
     reader = csv.DictReader(f)
     writer = csv.DictWriter(odpri,fieldnames=['Ime','Priimek', 'Spol',
                                                    'Datum_rojstva','Datum_smrti', 'Regija',
                                                    'Status', 'Zakonski_stan','Izobrazba'])
     writer.writeheader()
     for row in reader:
+        regija = random.choice(regije)
         zakonski_stan = random.choice(zakonski_stanovi)
         status = random.choice(statusi)
         if row['Datum_rojstva'] > row['Datum_smrti'] and row['Datum_smrti'] != '':
@@ -57,11 +56,14 @@ with open('MOCK_DATA.csv') as f:
             status = 'pokojni'
         if starost < 18:
             zakonski_stan = 'otrok'
-        
+
+        if row['Spol'] == 'Z':
+            row['Spol'] = 'Ž'
         
         row['Status'] = status
         row['Zakonski_stan'] = zakonski_stan
         row['Izobrazba']= izobrazba
+        row['Regija'] = regija
         writer.writerow(row)
         
 
