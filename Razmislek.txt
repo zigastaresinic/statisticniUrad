@@ -5,7 +5,7 @@ spol/izobrazba
 admin : vse (administratorsko geslo)
 
 prebivalstvo: blablabla123 ###
-izobraževanje: 123456789
+izobraÅ¾evanje: 123456789
 
 
 luka33
@@ -15,13 +15,13 @@ prebivalstvo
 -->>> geslo za prebivalstvo: blablabla123
 ime/priimek/spol/datumrojstva(smrti)/regija/zakonski stan
 
-izobraževanje
--->>> geslo za izobraževanje: 123456789
+izobraÅ¾evanje
+-->>> geslo za izobraÅ¾evanje: 123456789
 status/izobrazbe/spol/datum rojstva
 
 delo
 -->>>geslo za delo:...
 spol/datum rojstva/status/izbrazba
 
-
+------------------------- DROPDOWN - izbor sektorja pri prijavi
  
