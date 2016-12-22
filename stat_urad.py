@@ -23,5 +23,14 @@ def dodaj_uporabnika():
             
     return redirect('/dodaj_uporabnika/')
 
-
+##@route('/prijava/')
+##def prijava():
+##    upIme = request.forms.uporabnik
+##    geslo = request.forms.uporabnik
+##    aliPravo = modeli.prijava(upIme,geslo)
+##    if aliPravo == None:
+##        return redirect('/prijava/')
+##    else:
+##        return redirect('/pomoc/')
+    
 run(debug = True)
