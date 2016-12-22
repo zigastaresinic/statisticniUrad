@@ -38,12 +38,6 @@ def dostop(sektor):
               join Sektor_pravice on Stolpci.Id = Sektor_pravice.Stolpec
               join Sektorji on Sektor_pravice.Sektor = Sektorji.Id
               where Sektorji.Sektor = ?; '''
-##    sektorji = con.execute(sql, [sektor])
-##    sez = []
-##    for a in sektorji:
-##        a = a[0]
-##        sez.append(a)
-   
 
     stolpci_sektorja = ", ".join(r[0] for r in con.execute(sql, [sektor]))
     sez = stolpci_sektorja.split(', ')
@@ -52,13 +46,24 @@ def dostop(sektor):
         x = dict(x)
         niz = ''
         for i in range(len(sez)):
-            niz += x[sez[i]]
+            nekej = x[sez[i]]
+            if nekej == None:
+                nekej = ''            
+            niz += str(nekej)+',' #str zaradi izobrazbe
         
         print(niz)
 
-    
-    
-    
+
+
+
+##import datatime
+##
+##def abc():
+##    sql = '''insert into Poizvedbe (Ime, Opis, SQL_stavek, Zadnja_uporaba) values (?,?,?,?)'''
+##    #sql2 = '''insert into Sektor_poizvedbe (Sektor, Poizvedba) values (?, ?)'''
+##    zadnja=datatime.now()
+##    print(zadnja)
+##    
     
     
 
