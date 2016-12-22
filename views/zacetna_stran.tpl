@@ -7,21 +7,21 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<h1>Pozdravljeni na spletni strani mini statističnega urada!</h1>
-<div class="container">
-  <h2>Dropdowns</h2>
-  <p>The .dropdown class is used to indicate a dropdown menu.</p>
-  <p>Use the .dropdown-menu class to actually build the dropdown menu.</p>
-  <p>To open the dropdown menu, use a button or a link with a class of .dropdown-toggle and data-toggle="dropdown".</p>                                          
-  <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <li><a href="#">HTML</a></li>
-      <li><a href="#">CSS</a></li>
-      <li><a href="#">JavaScript</a></li>
-    </ul>
-  </div>
+<h1>Pozdravljeni na spletni strani mini statističnega urada!</h1><br>
+
+<div class="modal-dialog">
+	<div class="loginmodal-container">
+		<h2>Prijava v strežnik</h2><br>
+		<form action = /prijava/>
+			<input type="text" name="upIme" placeholder="Uporabniško ime">
+			<input type="password" name="geslo" placeholder="Geslo">
+			<input type="submit" name="potrdi" class="login loginmodal-submit" value="Potrdi">
+		</form>
+					
+		<div class="login-help">
+			<a href="/dodaj_uporabnika/">Nov uporabnik</a>
+		</div>
+	</div>
 </div>
 
 </body>

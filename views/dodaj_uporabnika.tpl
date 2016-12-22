@@ -10,7 +10,7 @@
 <html>
 <form action = "/dodaj_uporabnika/", method = "POST">
 	uporabnik: <input type="text" name="uporabnik" />
-	geslo: <input type="text" name="geslo" />
+	geslo: <input type="password" name="geslo" />
 	<div class="dropdown">
 		Sektor: <select class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" name="sektor">
 		<option value="1">Prebivalstvo</option>
