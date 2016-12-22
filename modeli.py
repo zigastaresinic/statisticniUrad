@@ -11,11 +11,13 @@ def ime():
         print(ime,priimek)
 
 def dodaj_uporabnika(upIme,geslo,sektor):
-    sql = '''insert into Uporabnik (Uporabniško_ime,Geslo) values (?,?)'''
-    sql2 = '''insert into Uporabnik_sektor (Uporabnik, Sektor) values (?,?)'''
+    sql =   '''
+             insert into Uporabnik
+             (Uporabniško_ime,Geslo,Sektor)
+             values (?,?,?)
+            '''
     geslo = hashlib.md5(geslo.encode()).hexdigest()
-    con.execute(sql,[upIme,geslo])
-    con.execute(sql2,[upIme,sektor])
+    con.execute(sql,[upIme,geslo,sektor])
     con.commit()
 
 
@@ -26,9 +28,11 @@ def prijava(upIme, geslo):
         select Geslo
         from Uporabnik
         where Uporabniško_ime = ?
-          and Geslo = ?;'''
+          and Geslo = ?;
+          '''
     pravo = con.execute(sql, [upIme, geslo]).fetchone()
-    #gledamo ce je none ali ne
+    #ce je none ali ne
+    return pravo
 
 
 
@@ -37,7 +41,8 @@ def dostop(sektor):
               from Stolpci
               join Sektor_pravice on Stolpci.Id = Sektor_pravice.Stolpec
               join Sektorji on Sektor_pravice.Sektor = Sektorji.Id
-              where Sektorji.Sektor = ?; '''
+              where Sektorji.Sektor = ?;
+              '''
 
     stolpci_sektorja = ", ".join(r[0] for r in con.execute(sql, [sektor]))
     sez = stolpci_sektorja.split(', ')
@@ -53,9 +58,20 @@ def dostop(sektor):
         
         print(niz)
 
+def dodajOsebo(ime, priimek, spol, datumR, datumS, regija, status, stan, izobrazba):
+    #za admina
+    sql = '''
+          insert into Oseba
+          (Ime,Priimek, Spol,Datum_rojstva, Datum_smrti, Regija, Status, Zakonski_stan, Izobrazba)
+          values (?,?,?,?,?,?,?,?,?)
+          '''
+    con.execute(sql,[ime,priimek, spol, datumR, datumS, regija, status, stan, izobrazba])
+    con.commit()
 
 
 
+
+    
 ##import datatime
 ##
 ##def abc():
