@@ -1,5 +1,10 @@
 from bottle import *
+from bottlesession import session
 import modeli
+
+sess = session()
+sess.set('upIme', '')
+sess.set('sektor', '')
 
 @route('/static/<file>')
 def static(file):
@@ -18,9 +23,9 @@ def prijavare():
     if aliPravo is not None:
         (sektor,stSek) = modeli.poisciSektor(upIme) ##vrnemo sektor in st vseh sektorjev za zanko,
                                             ##ce se v prihodnosti odločimo, da dodamo še kak sektor
-        for i in range(1,stSek+1):
-            if sektor == 4:
-                return redirect('/admin/')
+        sess.set('upIme', upIme)
+        sess.set('sektor', sektor)
+        return redirect('/{0}/'.format(sektor))
     else:
         return redirect('/pomoc/')
 
@@ -46,8 +51,12 @@ def dodaj_uporabnika():
 def prijava():
     return template('prijava')
 
-@route('/admin/')
-def admin():
-    return template('admin')
+@route('/<id>/')
+def admin(id):
+    if int(id) != sess.read('sektor'):
+        return redirect('/')
+    return template(str(id))
+
+
 #https://bottlepy.org/docs/dev/tutorial.html#id3
 run(debug = True)
