@@ -10,27 +10,29 @@ def ime():
     for ime,priimek in con.execute(sql):
         print(ime,priimek)
 
+def koda_gesla(geslo):
+    geslo = hashlib.md5(geslo.encode()).hexdigest()
+    return geslo
+
 def dodaj_uporabnika(upIme,geslo,sektor):
     sql =   '''
              insert into Uporabnik
              (Uporabniško_ime,Geslo,Sektor)
              values (?,?,?)
             '''
-    geslo = hashlib.md5(geslo.encode()).hexdigest()
-    con.execute(sql,[upIme,geslo,sektor])
+    con.execute(sql,[upIme,koda_gesla(geslo),sektor])
     con.commit()
 
 
 
 def prijava(upIme, geslo):
-    geslo = hashlib.md5(geslo.encode()).hexdigest()
     sql = '''
         select Geslo
         from Uporabnik
         where Uporabniško_ime = ?
           and Geslo = ?;
           '''
-    pravo = con.execute(sql, [upIme, geslo]).fetchone()
+    pravo = con.execute(sql, [upIme, koda_gesla(geslo)]).fetchone()
     #ce je none ali ne
     return pravo
 
