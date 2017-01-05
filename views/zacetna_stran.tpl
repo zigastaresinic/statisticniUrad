@@ -5,9 +5,17 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  
 </head>
+
+
+
+
 <body>
-<h1>Pozdravljeni na spletni strani mini statističnega urada!</h1><br>
+<p class="text-center"><h1 style="font-size:370%;">  Pozdravljeni na spletni strani mini statističnega urada! </h1><br></p>
+
+
 
 <div class="modal-dialog">
 	<div class="loginmodal-container">
