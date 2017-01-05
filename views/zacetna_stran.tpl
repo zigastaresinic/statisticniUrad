@@ -20,13 +20,12 @@
 <div class="modal-dialog">
 	<div class="loginmodal-container">
 		<h2>Prijava v strežnik</h2><br>
-		<form action = /prijava/>
+		<form action = "/" method="post">
 			<input type="text" name="upIme" placeholder="Uporabniško ime">
 			<input type="password" name="geslo" placeholder="Geslo">
-			<input type="submit" name="potrdi" class="login loginmodal-submit" value="Potrdi">
+			<button>Potrdi</button>
 		</form>
-					
-		<div class="login-help">
+		<div class="novUporabnik">
 			<a href="/dodaj_uporabnika/">Nov uporabnik</a>
 		</div>
 	</div>

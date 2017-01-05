@@ -70,6 +70,15 @@ def dodajOsebo(ime, priimek, spol, datumR, datumS, regija, status, stan, izobraz
     con.execute(sql,[ime,priimek, spol, datumR, datumS, regija, status, stan, izobrazba])
     con.commit()
 
+def poisciSektor(upIme):
+    sql = '''SELECT Sektor
+             FROM Uporabnik
+             WHERE Uporabnik.Uporabniško_ime= ?;'''
+    sql2 = '''SELECT count(*) AS st
+              FROM Sektorji;'''
+    stSektorjev = con.execute(sql2).fetchone()['st']
+    sektor = con.execute(sql,[upIme]).fetchone()['Sektor']
+    return sektor,stSektorjev
 
 
 
