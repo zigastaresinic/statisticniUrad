@@ -1,13 +1,5 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
+% rebase('osnova.tpl')
 <body>
-<html>
 <form action = "/dodaj_uporabnika/", method = "POST">
 
 	<div class="col-xs-12" style="height:50px;"></div>
@@ -41,7 +33,6 @@
 	</div>
 	
 	
-	
 	<div>
 		<div class="row">
 			<div class="col-md-8"><p class="text-right"><button type = "submit" class="btn btn-default" href="#" role="button"> Dodaj uporabnika </button> </p> </div>
@@ -49,5 +40,3 @@
 	</div>
 	
 </form>
-</body>
-</html>

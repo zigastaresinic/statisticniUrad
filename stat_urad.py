@@ -1,6 +1,10 @@
 from bottle import *
 import modeli
 
+@route('/static/<file>')
+def static(file):
+    return static_file(file, 'static/')
+
 @route('/')
 def index():
     return template('zacetna_stran')
@@ -26,7 +30,7 @@ def pomoc():
 
 @route('/dodaj_uporabnika/')
 def dodaj_uporabnika():
-    return template('dodaj_uporabnika')
+    return template('dodaj_uporabnika', test=42)
 
 @post('/dodaj_uporabnika/')
 def dodaj_uporabnika():
