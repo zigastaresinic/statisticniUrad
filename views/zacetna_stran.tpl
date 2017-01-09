@@ -1,9 +1,10 @@
 % rebase('osnova.tpl')
-<h1 style="font-size:320%;" class="text-center" > <kbd> Pozdravljeni na spletni strani mini statističnega urada! </h1></kbd><br>
+<div class="col-sm-12"><h1 style="font-size:280%" class="text-center"> <kbd> Pozdravljeni na spletni strani mini statističnega urada! </h1></kbd><br></div>
 
 <div class="modal-dialog">
 	<div class="form-group">
-		<h2 class="text-uppercase">Prijava v strežnik</h2><br>
+		<div class="col-xs-12" style="height:20px;"></div>
+		<h2 class="text-uppercase col-xm-12">Prijava v strežnik</h2><br>
 		
 		<form action = "/" method="post">
 		

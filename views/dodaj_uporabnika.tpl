@@ -1,5 +1,4 @@
 % rebase('osnova.tpl')
-<body>
 <form action = "/dodaj_uporabnika/", method = "POST">
 
 	<div class="col-xs-12" style="height:50px;"></div>
