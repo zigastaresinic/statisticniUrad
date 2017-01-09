@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Page Title</title>
-</head>
-<body>
+% rebase('base.tpl', sektor = 'admine')
 
 <h1>Pozdravljen, admin!</h1>
 <p></p>
-
-</body>
-</html>
