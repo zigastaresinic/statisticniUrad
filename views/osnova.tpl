@@ -431,15 +431,21 @@ $(function () {
 		</button>
 		
 		<div style="float: right">
+		<div style='height:15px;'></div>
+		<a href="/lokacija/">
 		<button 
 			type="button"			
 			class="btn btn-default btn-circle btn-lg btn btn-secondary " 
-			data-toggle="tooltip" data-placement="bottom" title="Lokacija">
-			
+			data-toggle="tooltip" data-placement="bottom" title="Lokacija">			
 			<i class="fa fa-fw faa-bounce animated glyphicon glyphicon-map-marker"></i>
 		</button>
-		<button type="button" class="btn btn-default btn-circle btn-xl"><i class="fa fa-fw faa-horizontal animated glyphicon glyphicon-envelope"></i></button>
+		</a>
+		<a href="/kontakt/">
+		<button type="button" class="btn btn-default btn-circle btn-xl"
+		data-toggle="tooltip" data-placement="bottom" title="Kontakt">
+		<i class="fa fa-fw faa-horizontal animated glyphicon glyphicon-envelope"></i></button>
 		</div>
+		</a>
 </div>
 <div class="container">
 <div class="row">

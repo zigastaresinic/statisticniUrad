@@ -20,7 +20,7 @@
 			<div class="col-xs-12" style="height:10px;"></div>
 		</form>
 		<div class="novUporabnik">
-			<a href="/dodaj_uporabnika/"><button type="button" class="btn btn-default btn-block"> NOV UPORABNIK </button></a>
+			<a href="/odjava/"><button type="button" class="btn btn-default btn-block"> NOV UPORABNIK </button></a>
 		</div>
 	</div>
 </div>

@@ -35,7 +35,7 @@ def pomoc():
 
 @route('/dodaj_uporabnika/')
 def dodaj_uporabnika():
-    return template('dodaj_uporabnika', test=42)
+    return template('dodaj_uporabnika')
 
 @post('/dodaj_uporabnika/')
 def dodaj_uporabnika():
@@ -52,11 +52,23 @@ def prijava():
     return template('prijava')
 
 @route('/<id>/')
-def admin(id):
+def stranSektorja(id):
     if int(id) != sess.read('sektor'):
         return redirect('/')
     return template(str(id))
 
+@route('/odjava/')
+def odjava():
+    sess.set('upIme', '')
+    sess.set('sektor', '')
+    #odstranimo piskotke, da se ne da priti direktno do sektorja
+    return redirect('/')
+@route('/lokacija/')
+def lok():
+    return template('lokacija')
 
+@route('/kontakt/')
+def kon():
+    return template('kontakt')
 #https://bottlepy.org/docs/dev/tutorial.html#id3
 run(debug = True)
