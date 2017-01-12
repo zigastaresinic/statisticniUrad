@@ -1,2 +1,2 @@
 % rebase('osnova.tpl')
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2769.458093851549!2d14.487740815576823!3d46.041960279111926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47652d42305fe59f%3A0x75d3c9ca91acdc9d!2sJadranska+ulica+21%2C+1000+Ljubljana!5e0!3m2!1ssl!2ssi!4v1484131911288" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2769.458093851549!2d14.487740815576823!3d46.041960279111926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47652d42305fe59f%3A0x75d3c9ca91acdc9d!2sJadranska+ulica+21%2C+1000+Ljubljana!5e0!3m2!1ssl!2ssi!4v1484131911288" width="400" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>

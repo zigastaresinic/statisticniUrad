@@ -70,5 +70,9 @@ def lok():
 @route('/kontakt/')
 def kon():
     return template('kontakt')
+
+@route('/<id>/vpisi_SQL/')
+def vpisi(id):
+    return template('vpisi_SQL')
 #https://bottlepy.org/docs/dev/tutorial.html#id3
 run(debug = True)
