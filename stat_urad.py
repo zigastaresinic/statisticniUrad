@@ -21,7 +21,7 @@ def prijavare():
     aliPravo = modeli.prijava(upIme,geslo)
     #print(upIme,geslo,aliPravo)
     if aliPravo is not None:
-        (sektor,stSek) = modeli.poisciSektor(upIme) ##vrnemo sektor in st vseh sektorjev za zanko,
+        sektor = modeli.poisciSektor(upIme) ##vrnemo sektor in st vseh sektorjev za zanko,
                                             ##ce se v prihodnosti odločimo, da dodamo še kak sektor
         sess.set('upIme', upIme)
         sess.set('sektor', sektor)
@@ -75,4 +75,12 @@ def kon():
 def vpisi(id):
     return template('vpisi_SQL')
 #https://bottlepy.org/docs/dev/tutorial.html#id3
+
+@route('/<id>/baza/')
+def poglejBazo(id):
+    #if int(id) != sess.read('sektor'):
+        #return redirect('/')
+    ime_sektorja = modeli.sektorIzStevilke(id)
+    izpis, stolpci = modeli.dostop(ime_sektorja)
+    return template('baza', izpis = izpis, stolpci = stolpci)
 run(debug = True)

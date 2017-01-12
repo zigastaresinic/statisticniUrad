@@ -7,12 +7,12 @@
 <ul>
   <li><a href="/vpisi_SQL/">Vpiši SQL</a></li>
   <div style='height:2px; width:140px;'></div>
-  <li><a href="/baza/">Poglej bazo</a></li>
+  <li><a href="/4/baza/">Poglej bazo</a></li>
   <div style='height:2px; width:140px;'></div>
-  <li><a href="/dodaj_osebo/">Dodaj osebo</a></li>
+  <li><a href="/dodaj_uporabnika/">Dodaj osebo</a></li>
   <div style='height:2px; width:140px;'></div>
   <li><a href="/dodaj_uporabnika/">Dodaj uporabnika</a></li>
   <div style='height:2px; width:140px;'></div>
-  <li><a href="/sql_stavki/">Dodaj SQL</a></li>
+  <li><a href="/dodaj_SQL/">Dodaj SQL</a></li>
 </ul>
 </div>

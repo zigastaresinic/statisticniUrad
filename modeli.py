@@ -46,19 +46,21 @@ def dostop(sektor):
               where Sektorji.Sektor = ?;
               '''
 
-    stolpci_sektorja = ", ".join(r[0] for r in con.execute(sql, [sektor]))
+    stolpci = [r[0] for r in con.execute(sql, [sektor]).fetchall()]
+    stolpci_sektorja = ", ".join(stolpci)
     sez = stolpci_sektorja.split(', ')
     sql = '''SELECT {} FROM Oseba'''.format(stolpci_sektorja)
-    for x in con.execute(sql):
-        x = dict(x)
-        niz = ''
-        for i in range(len(sez)):
-            nekej = x[sez[i]]
-            if nekej == None:
-                nekej = ''            
-            niz += str(nekej)+',' #str zaradi izobrazbe
-        
-        print(niz)
+##    for x in con.execute(sql):
+##        x = dict(x)
+##        niz = ''
+##        for i in range(len(sez)):
+##            nekej = x[sez[i]]
+##            if nekej == None:
+##                nekej = ''            
+##            niz += str(nekej)+',' #str zaradi izobrazbe
+##        
+##        print(niz)
+    return (list(con.execute(sql)), stolpci)
 
 def dodajOsebo(ime, priimek, spol, datumR, datumS, regija, status, stan, izobrazba):
     #za admina
@@ -78,10 +80,14 @@ def poisciSektor(upIme):
               FROM Sektorji;'''
     stSektorjev = con.execute(sql2).fetchone()['st']
     sektor = con.execute(sql,[upIme]).fetchone()['Sektor']
-    return sektor,stSektorjev
+    return sektor
 
 
-
+def sektorIzStevilke(id):
+    sql = '''SELECT Sektor
+             FROM Sektorji
+             WHERE Sektorji.id = ?'''
+    return con.execute(sql,[id]).fetchone()['Sektor']
     
 ##import datatime
 ##

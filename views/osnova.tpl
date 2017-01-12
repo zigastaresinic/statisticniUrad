@@ -161,7 +161,7 @@ $(function () {
 			type="button" 
 			class="btn btn-default btn-circle btn-xl btn btn-secondary"
 			data-toggle="tooltip" data-placement="bottom" title="Kontakt">
-			<i class="fa faa-float animated glyphicon glyphicon-envelope"></i>
+			<i class="fa faa-pulse animated glyphicon glyphicon-envelope"></i>
 		</button>
 		</a>
 		
