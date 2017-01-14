@@ -46,11 +46,22 @@ tr:nth-child(even){background-color: #f2f2f2} <!--Vsak drugi je malo drugačne b
 
 <body>
 <div class = "naslov">
-<h1 style = "float:left; width:auto;">Dobrodošli na strani sektorja za {{sektor}}!</h1>
+<h1 style = "float:left; width:auto;">{{dobrodoslica}}</h1>
 </div>
 <div>
 	<a href="/odjava/"><button type="button" class="btn btn-default btn-block">Odjava</button></a>
 </div>
+
+<div style = "clear:both">
+<hr size = "5" color = '#000000' />
+<br>
+<br>
+<ul>
+  <li><a href="/{{stSektorja}}/vpisi_SQL/">Vpiši SQL</a></li>
+  <div style='height:2px; width:140px;'></div>
+  <li><a href="/{{stSektorja}}/baza_osebe/">Poglej bazo</a></li>
+  <div style='height:2px; width:140px;'></div>
+  <li><a href="/{{stSektorja}}/dodaj_SQL/">Dodaj SQL</a></li>
 {{!base}}
 </body>
 </html>

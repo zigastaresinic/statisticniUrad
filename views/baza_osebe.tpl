@@ -1,4 +1,4 @@
-% rebase('base.tpl', sektor = '')
+% rebase('base.tpl', dobrodoslica = '')
 <section class="container">
   <table class="striped bordered">
   <thead>

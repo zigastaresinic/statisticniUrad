@@ -1,13 +1,4 @@
-%rebase('base.tpl', sektor = 'prebivalstvo')
-<div style = "clear:both">
-<hr size = "5" color = '#000000' />
-<br>
-<br>
-<ul>
-  <li><a href="/vpisi_SQL/">Vpiši SQL</a></li>
-  <div style='height:2px; width:140px;'></div>
-  <li><a href="/1/baza/">Poglej bazo</a></li>
-  <div style='height:2px; width:140px;'></div>
-  <li><a href="/dodaj_SQL/">Dodaj SQL</a></li>
+%rebase('base.tpl', dobrodoslica = 'Pozdravljeni na strani sektorja za prebivalstvo', stSektorja='1')
+
 </ul>
 </div>

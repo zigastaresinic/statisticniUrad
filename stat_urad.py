@@ -43,8 +43,7 @@ def dodaj_uporabnika():
     pas = request.forms.geslo
     sek = request.forms.sektor
     if up and pas and sek:
-        modeli.dodaj_uporabnika(up,pas,sek)
-            
+        modeli.dodaj_uporabnika(up,pas,sek)            
     return redirect('/dodaj_uporabnika/')
     
 @route('/prijava/')
@@ -73,14 +72,16 @@ def kon():
 
 @route('/<id>/vpisi_SQL/')
 def vpisi(id):
+    if int(id) != sess.read('sektor'):
+        return redirect('/')
     return template('vpisi_SQL')
 #https://bottlepy.org/docs/dev/tutorial.html#id3
 
-@route('/<id>/baza/')
+@route('/<id>/baza_osebe/')
 def poglejBazo(id):
-    #if int(id) != sess.read('sektor'):
-        #return redirect('/')
+    if int(id) != sess.read('sektor'):
+        return redirect('/')
     ime_sektorja = modeli.sektorIzStevilke(id)
     izpis, stolpci = modeli.dostop(ime_sektorja)
-    return template('baza', izpis = izpis, stolpci = stolpci)
+    return template('baza_osebe', izpis = izpis, stolpci = stolpci , stSektorja = id)
 run(debug = True)

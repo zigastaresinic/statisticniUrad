@@ -140,10 +140,11 @@ $(function () {
 <div 
 	class="col-sm-12" 
 	style="background-color:#20B2AA; height:100px">
+		<a href='/'>
 		<button class="button1"> 
 			<img src = "/static/mali_logo.png" width="140" height="90">
 		</button>
-		
+		</a>
 		<div style="float: right">
 		<div style='height:15px;'></div>
 		

@@ -1,18 +1,10 @@
-% rebase('base.tpl', sektor = 'admine')
+% rebase('base.tpl', dobrodoslica = 'Pozdravljeni na strani sektorja za admine', stSektorja = '4')
+  <div style='height:2px; width:140px;'></div>
+  <li><a href="/4/dodaj_osebo/">Dodaj osebo</a></li>
+  <div style='height:2px; width:140px;'></div>
+  <li><a href="/4/baza_uporabniki/">Baza uporabnikov</a></li>
+  <div style='height:2px; width:140px;'></div>
+  <li><a href="/4/dodaj_uporabnika/">Dodaj uporabnika</a></li>
 
-<div style = "clear:both">
-<hr size = "5" color = '#000000' />
-<br>
-<br>
-<ul>
-  <li><a href="/vpisi_SQL/">Vpiši SQL</a></li>
-  <div style='height:2px; width:140px;'></div>
-  <li><a href="/4/baza/">Poglej bazo</a></li>
-  <div style='height:2px; width:140px;'></div>
-  <li><a href="/dodaj_uporabnika/">Dodaj osebo</a></li>
-  <div style='height:2px; width:140px;'></div>
-  <li><a href="/dodaj_uporabnika/">Dodaj uporabnika</a></li>
-  <div style='height:2px; width:140px;'></div>
-  <li><a href="/dodaj_SQL/">Dodaj SQL</a></li>
 </ul>
 </div>
