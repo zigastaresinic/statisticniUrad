@@ -1,10 +1,25 @@
-% rebase('base.tpl', dobrodoslica = '')
+% rebase(uporabljenBase, dobrodoslica = '')
+<style>
+#prikazBaze {
+    position:absolute;
+    top: 40%;
+    left: 35%;
+    margin-top: -9em; /*set to a negative number 1/2 of your height*/
+    margin-left: -15em; /*set to a negative number 1/2 of your width*/
+    border: 2px solid #000000;	
+    background-color: #ffffff;
+}
+p {
+    border-left: 2px #000000;
+}
+</style>
+<div id = "prikazBaze">
 <section class="container">
-  <table class="striped bordered">
+  <table class="bordered">
   <thead>
 	 <tr>
 	 %for el in stolpci:
-	 <th>
+	 <th width = "80">
 	 {{el.replace('_', ' ')}}
 	 </th>
 	 %end
@@ -14,6 +29,7 @@
 	 %for oseba in izpis:
 	 <tr>
 	 %for element in stolpci:
+	 <p>
 	 <td>
 	 %if oseba[element] is not None:
 	 {{oseba[element]}}
@@ -21,9 +37,11 @@
 	 -
 	 %end
 	 </td>
+	 </p>
 	 %end
 	 </tr>
 	 %end
   </tbody>
   </table>
 </section>
+</div>

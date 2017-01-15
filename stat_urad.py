@@ -1,6 +1,6 @@
 from bottle import *
 from bottlesession import session
-import modeli
+import modeli,time
 
 sess = session()
 sess.set('upIme', '')
@@ -27,11 +27,11 @@ def prijavare():
         sess.set('sektor', sektor)
         return redirect('/{0}/'.format(sektor))
     else:
-        return redirect('/pomoc/')
+        return redirect('/error/')
 
-@route('/pomoc/')
+@route('/error/')
 def pomoc():
-    return 'Narobe ste vnesli geslo.'
+    return template('error.tpl')
 
 @route('/dodaj_uporabnika/')
 def dodaj_uporabnika():
@@ -83,5 +83,10 @@ def poglejBazo(id):
         return redirect('/')
     ime_sektorja = modeli.sektorIzStevilke(id)
     izpis, stolpci = modeli.dostop(ime_sektorja)
-    return template('baza_osebe', izpis = izpis, stolpci = stolpci , stSektorja = id)
+    if id != '4':
+        b = 'base_uporabnik'
+    else:
+        b = 'base_admin'
+        
+    return template('baza_osebe', uporabljenBase = b, izpis=izpis, stolpci = stolpci, stSektorja = id)
 run(debug = True)

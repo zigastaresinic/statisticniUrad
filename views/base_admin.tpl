@@ -39,7 +39,8 @@ li a:hover {
     color: white;
 }
 	
-tr:nth-child(even){background-color: #f2f2f2} <!--Vsak drugi je malo drugačne barve (za v tabelo)-->
+tr:nth-child(even){background-color: #c4c2c2;} <!--Vsak drugi je malo drugačne barve (za v tabelo)-->
+tr:nth-child(odd){background-color: ##d8d4d4;}
 	
 </style>
 </head>
@@ -61,7 +62,15 @@ tr:nth-child(even){background-color: #f2f2f2} <!--Vsak drugi je malo drugačne b
   <div style='height:2px; width:140px;'></div>
   <li><a href="/{{stSektorja}}/baza_osebe/">Poglej bazo</a></li>
   <div style='height:2px; width:140px;'></div>
-  <li><a href="/{{stSektorja}}/dodaj_SQL/">Dodaj SQL</a></li>
+  <li><a href="/{{stSektorja}}/dodaj_SQL/">Dodaj SQL</a></li>  
+  <div style='height:2px; width:140px;'></div>
+  <li><a href="/{{stSektorja}}/dodaj_osebo/">Dodaj osebo</a></li>
+  <div style='height:2px; width:140px;'></div>
+  <li><a href="/{{stSektorja}}/baza_uporabniki/">Baza uporabnikov</a></li>
+  <div style='height:2px; width:140px;'></div>
+  <li><a href="/{{stSektorja}}/dodaj_uporabnika/">Dodaj uporabnika</a></li>
+</ul>
+</div>
 {{!base}}
 </body>
 </html>
