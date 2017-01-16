@@ -88,6 +88,16 @@ def sektorIzStevilke(id):
              FROM Sektorji
              WHERE Sektorji.id = ?'''
     return con.execute(sql,[id]).fetchone()['Sektor']
+
+
+def uporabnik():
+    sql = ''' select *
+              from Uporabnik'''
+            
+              
+
+    stolpci=['Uporabniško_ime', 'Geslo', 'Sektor']
+    return (list(con.execute(sql)),stolpci)
     
 ##import datatime
 ##
@@ -109,4 +119,4 @@ def sektorIzStevilke(id):
 
 
 
-    
+

@@ -88,4 +88,14 @@ def poglejBazo(id):
     ime_sektorja = modeli.sektorIzStevilke(id)
     izpis, stolpci = modeli.dostop(ime_sektorja) 
     return template('baza_osebe', izpis=izpis, stolpci = stolpci, stSektorja = id)
+
+@route('/4/baza_uporabniki/')
+def poglejBazoUporabnika():
+    if 4 != sess.read('sektor'):
+        return redirect('/')
+    izpis, stolpci = modeli.uporabnik()
+    b = 'base_admin'
+        
+    return template('baza_uporabniki', izpis=izpis, stolpci=stolpci, stSektorja=4)
+
 run(debug = True)
