@@ -49,7 +49,7 @@ tr:nth-child(odd){background-color: ##d8d4d4;}
 <div class = "naslov">
 <h1 style = "float:left; width:auto;">{{dobrodoslica}}</h1>
 </div>
-<div>
+<div style="float:right;">
 	<a href="/odjava/"><button type="button" class="btn btn-default btn-block">Odjava</button></a>
 </div>
 

@@ -11,7 +11,7 @@ body   {
 	text-align:center;
 	font-family:"Times New Roman";
 	font-weight: bold;
-	width: 500px;
+	width: 1000px
 }
 ul {
     list-style-type: none;
@@ -49,9 +49,10 @@ tr:nth-child(odd){background-color: ##d8d4d4;}
 <div class = "naslov">
 <h1 style = "float:left; width:auto;">{{dobrodoslica}}</h1>
 </div>
-<div>
+<div style="float:right;">
 	<a href="/odjava/"><button type="button" class="btn btn-default btn-block">Odjava</button></a>
 </div>
+
 
 <div style = "clear:both">
 <hr size = "5" color = '#000000' />
