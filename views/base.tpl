@@ -57,11 +57,11 @@ tr:nth-child(odd){background-color: ##d8d4d4;}
 <br>
 <hr size = "5" style="width:100%; float: left;" color = '#000000' />
 <div>
-<div style="width: 180px; float: left;">
+<div style="margin-top:1%; width: 180px; float: left;">
 <ul>
   <li><a href="/{{stSektorja}}/vpisi_SQL/">Vpiši SQL</a></li>
   <div style='height:2px; width:140px;'></div>
-  <li><a href="/{{stSektorja}}/baza_osebe/">Poglej bazo</a></li>
+  <li><a href="/{{stSektorja}}/baza_osebe/">Baza oseb</a></li>
   <div style='height:2px; width:140px;'></div>
   <li><a href="/{{stSektorja}}/dodaj_SQL/">Dodaj SQL</a></li>
 %if stSektorja == 4:
@@ -74,7 +74,7 @@ tr:nth-child(odd){background-color: ##d8d4d4;}
 %end
 </ul>
 </div>
-<div style="width: 55%; margin-left: 220px;">
+<div style="width: 60%; margin-left: 220px;">
 {{!base}}
 </div>
 </div>

@@ -1,23 +1,20 @@
-% rebase(uporabljenBase, dobrodoslica = '')
+% rebase('base.tpl', dobrodoslica = '')
 <style>
 #prikazBaze {
     position:absolute;
-    top: 40%;
-    left: 35%;
-    margin-top: -16em; /*set to a negative number 1/2 of your height*/
-    margin-left: -15em; /*set to a negative number 1/2 of your width*/
-	margin-bottom: 9em;
+    top: 13%;
+    left: 15%;
     border: 2px solid #000000;	
     background-color: #ffffff;
 }
 </style>
-<div id = "prikazBaze">
+<div id = "prikazBaze"  style="margin-bottom: 5%; margin-top: 1%;text-align: center;">
 <section class="container">
-  <table class="bordered">
+  <table style="border-collapse: collapse">
   <thead>
 	 <tr>
 	 %for el in stolpci:
-	 <th width = "80">
+	 <th width = "300px" style="border-right:1px solid;border-bottom: 1px solid">
 	 {{el.replace('_', ' ')}}
 	 </th>
 	 %end
@@ -27,16 +24,15 @@
 	 %for oseba in izpis:
 	 <tr>
 	 %for element in stolpci:
-	 <td>
+	 <td style="border-right:1px solid; border-bottom:1px solid;">
 	 %if oseba[element] == 1:
 	 prebivalstvo
-	 %elseif oseba[element] == 2:
+	 %elif oseba[element] == 2:
 	 izobrazevanje
-	 %elsif oseba[element] == 3:
+	 %elif oseba[element] == 3:
 	 delo
-	 %elsif oseba[element] == 4:
-	 admin
-	 
+	 %elif oseba[element] == 4:
+	 admin	 
 	 %else:
 	 {{oseba[element]}}
 	 %end
