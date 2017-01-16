@@ -33,18 +33,18 @@ def prijavare():
 def pomoc():
     return template('error.tpl')
 
-@route('/dodaj_uporabnika/')
+@route('/4/dodaj_uporabnika/')
 def dodaj_uporabnika():
     return template('dodaj_uporabnika')
 
-@post('/dodaj_uporabnika/')
-def dodaj_uporabnika():
+@post('/4/dodaj_uporabnika/')
+def dodaj_uporabnika1():
     up = request.forms.uporabnik
     pas = request.forms.geslo
     sek = request.forms.sektor
     if up and pas and sek:
         modeli.dodaj_uporabnika(up,pas,sek)            
-    return redirect('/dodaj_uporabnika/')
+    return redirect('/4/dodaj_uporabnika/')
     
 @route('/prijava/')
 def prijava():
@@ -54,7 +54,7 @@ def prijava():
 def stranSektorja(id):
     if int(id) != sess.read('sektor'):
         return redirect('/')
-    return template(str(id))
+    return template(str(id), stSektorja = id)
 
 @route('/odjava/')
 def odjava():
@@ -70,23 +70,22 @@ def lok():
 def kon():
     return template('kontakt')
 
-@route('/<id>/vpisi_SQL/')
-def vpisi(id):
+@route('/<id:int>/vpisi_SQL/')
+def vpisiSQL(id):
     if int(id) != sess.read('sektor'):
         return redirect('/')
+    return template('vpisi_SQL',stSektorja = id)
+
+@post('/<id:int>/vpisi_SQL/')
+def vpisiSQLp(id):
     return template('vpisi_SQL')
 #https://bottlepy.org/docs/dev/tutorial.html#id3
 
-@route('/<id>/baza_osebe/')
+@route('/<id:int>/baza_osebe/')
 def poglejBazo(id):
     if int(id) != sess.read('sektor'):
         return redirect('/')
     ime_sektorja = modeli.sektorIzStevilke(id)
-    izpis, stolpci = modeli.dostop(ime_sektorja)
-    if id != '4':
-        b = 'base_uporabnik'
-    else:
-        b = 'base_admin'
-        
-    return template('baza_osebe', uporabljenBase = b, izpis=izpis, stolpci = stolpci, stSektorja = id)
+    izpis, stolpci = modeli.dostop(ime_sektorja) 
+    return template('baza_osebe', izpis=izpis, stolpci = stolpci, stSektorja = id)
 run(debug = True)

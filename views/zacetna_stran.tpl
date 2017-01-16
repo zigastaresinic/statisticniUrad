@@ -14,13 +14,13 @@
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog modal-lg">
-      <div class="modal-content">
+      <div class="modal-content">	  
+        <div class="modal-header">
+          <button type="button" class="btn btn-default" style ="float:right" data-dismiss="modal">&times;</button>
+        </div>
         <div class="modal-body">
         <div class="modal-dialog">
 			<div class="form-group">
-				<div class="col-xs-12" style="height:20px;"></div>
-				
-					
 				<form action = "/" method="post">
 					
 					<h2 class="text-uppercase col-xm-12">Prijava v strežnik</h2><br>
@@ -31,19 +31,11 @@
 					
 					<i class="glyphicon glyphicon-lock"></i> <label for="geslo">Geslo</label> 
 					<input type="password" class="form-control" name="geslo" placeholder = "Geslo">
-					<div class="col-xs-12" style="height:40px;"></div>
-					
-					<button class="btn btn-primary btn-block"> POTRDI </button>
-					<div class="col-xs-12" style="height:10px;"></div>
+					<div class="col-xs-12" style="height:25px;"></div>					
+					<button class="btn btn-primary btn-block" style="width:80px;"> POTRDI </button>
 				</form>
-				<div class="novUporabnik">
-					<a href="/dodaj_uporabnika/"><button type="button" class="btn btn-default btn-block"> NOV UPORABNIK </button></a>
-				</div>
 			</div>
 		</div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">&times;</button>
         </div>
       </div>
     </div>

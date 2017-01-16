@@ -11,7 +11,7 @@ body   {
 	text-align:center;
 	font-family:"Times New Roman";
 	font-weight: bold;
-	width: 500px;
+	width: 1000px;
 }
 ul {
     list-style-type: none;
@@ -52,19 +52,31 @@ tr:nth-child(odd){background-color: ##d8d4d4;}
 <div style="float:right;">
 	<a href="/odjava/"><button type="button" class="btn btn-default btn-block">Odjava</button></a>
 </div>
-
-<div style = "clear:both">
-<hr size = "5" color = '#000000' />
 <br>
 <br>
+<br>
+<hr size = "5" style="width:100%; float: left;" color = '#000000' />
+<div>
+<div style="width: 180px; float: left;">
 <ul>
   <li><a href="/{{stSektorja}}/vpisi_SQL/">Vpiši SQL</a></li>
   <div style='height:2px; width:140px;'></div>
   <li><a href="/{{stSektorja}}/baza_osebe/">Poglej bazo</a></li>
   <div style='height:2px; width:140px;'></div>
-  <li><a href="/{{stSektorja}}/dodaj_SQL/">Dodaj SQL</a></li>  
+  <li><a href="/{{stSektorja}}/dodaj_SQL/">Dodaj SQL</a></li>
+%if stSektorja == 4:
+  <div style='height:2px; width:140px;'></div>
+  <li><a href="/{{stSektorja}}/dodaj_osebo/">Dodaj osebo</a></li>
+  <div style='height:2px; width:140px;'></div>
+  <li><a href="/{{stSektorja}}/baza_uporabniki/">Baza uporabnikov</a></li>
+  <div style='height:2px; width:140px;'></div>
+  <li><a href="/{{stSektorja}}/dodaj_uporabnika/">Dodaj uporabnika</a></li>
+%end
 </ul>
 </div>
+<div style="width: 55%; margin-left: 220px;">
 {{!base}}
+</div>
+</div>
 </body>
 </html>

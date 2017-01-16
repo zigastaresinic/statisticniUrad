@@ -1,1 +1,1 @@
-% rebase('base_admin.tpl', dobrodoslica = 'Pozdravljeni na strani sektorja za admine', stSektorja = '4')
+% rebase('base.tpl', dobrodoslica = 'Pozdravljeni na strani sektorja za admine', stSektorja=4)

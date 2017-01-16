@@ -1,43 +1,17 @@
-% rebase('osnova.tpl')
+% rebase('base.tpl', dobrodoslica = '', stSektorja = 4)
 <style>
-	.btn span.glyphicon {    			
-		opacity: 0;				
-	}
-	.btn.active span.glyphicon {				
-		opacity: 1;				
-	}
-	
-	.nav-tabs-dropdown {
-		display: none;
-		border-bottom-left-radius: 0;
-		border-bottom-right-radius: 0;
-	}
-
-	.nav-tabs-dropdown:before {
-		content: "\e114";
-		font-family: 'Glyphicons Halflings';
-		position: absolute;
-		right: 30px;
-	}
-
-	@media screen and (min-width: 769px) {
-		#nav-tabs-wrapper {
-		display: block!important;}
-	}
-	@media screen and (max-width: 768px) {
-		.nav-tabs-dropdown {
-			display: block;
-	}
-	#nav-tabs-wrapper {
-		display: none;
-		border-top-left-radius: 0;
-		border-top-right-radius: 0;
-		text-align: center;
-	}
-	
+#prikaz {
+    position:center;
+    top: 40%;
+    left: 35%;
+    margin-top: -16em; /*set to a negative number 1/2 of your height*/
+    margin-left: -15em; /*set to a negative number 1/2 of your width*/
+    border: 2px solid #000000;	
+    background-color: #ffffff;
+}
 </style>
-
-<form action = "/dodaj_uporabnika/" method = "post">
+<div class="prikaz">
+<form action = "/4/dodaj_uporabnika/" method = "post">
 
 	<div class="col-xs-12" style="height:50px;"></div>
 	<div class="row">
@@ -71,7 +45,5 @@
 			</button>
 		</div>
 	</div>
-	
-	
-	
 </form>
+</div>

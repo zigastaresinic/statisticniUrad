@@ -1,12 +1,11 @@
-% rebase(uporabljenBase, dobrodoslica = '')
+% rebase('base.tpl', dobrodoslica = '')
 <style>
 #prikazBaze {
     position:absolute;
     top: 40%;
     left: 35%;
     margin-top: -16em; /*set to a negative number 1/2 of your height*/
-    margin-left: -15em; /*set to a negative number 1/2 of your width*/
-	margin-bottom: 9em;
+    margin-left: -10em; /*set to a negative number 1/2 of your width*/
     border: 2px solid #000000;	
     background-color: #ffffff;
 }

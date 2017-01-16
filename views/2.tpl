@@ -1,2 +1,2 @@
-%rebase ('base_uporabnik.tpl', dobrodoslica = 'Pozdravljeni na strani sektorja za izobraževanje', stSektorja ='2')
+%rebase ('base.tpl', dobrodoslica = 'Pozdravljeni na strani sektorja za izobraževanje', stSektorja ='2')
 
