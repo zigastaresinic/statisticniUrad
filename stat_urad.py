@@ -89,4 +89,15 @@ def poglejBazo(id):
         b = 'base_admin'
         
     return template('baza_osebe', uporabljenBase = b, izpis=izpis, stolpci = stolpci, stSektorja = id)
+
+@route('/4/baza_uporabniki/')
+def poglejBazoUporabnika():
+    if 4 != sess.read('sektor'):
+        return redirect('/')
+    izpis, stolpci = modeli.uporabnik()
+    b = 'base_admin'
+        
+    return template('baza_uporabniki', uporabljenBase = b, izpis=izpis, stolpci=stolpci, stSektorja=4)
+
+
 run(debug = True)
