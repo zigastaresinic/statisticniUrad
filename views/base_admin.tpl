@@ -60,7 +60,7 @@ tr:nth-child(odd){background-color: ##d8d4d4;}
 <ul>
   <li><a href="/{{stSektorja}}/vpisi_SQL/">Vpiši SQL</a></li>
   <div style='height:2px; width:140px;'></div>
-  <li><a href="/{{stSektorja}}/baza_osebe/">Poglej bazo</a></li>
+  <li><a href="/{{stSektorja}}/baza_osebe/">Baza oseb</a></li>
   <div style='height:2px; width:140px;'></div>
   <li><a href="/{{stSektorja}}/dodaj_SQL/">Dodaj SQL</a></li>  
   <div style='height:2px; width:140px;'></div>

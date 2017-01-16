@@ -39,7 +39,8 @@ li a:hover {
     color: white;
 }
 	
-tr:nth-child(even){background-color: #f2f2f2} <!--Vsak drugi je malo drugačne barve (za v tabelo)-->
+tr:nth-child(even){background-color: #c4c2c2;} <!--Vsak drugi je malo drugačne barve (za v tabelo)-->
+tr:nth-child(odd){background-color: ##d8d4d4;}
 	
 </style>
 </head>
