@@ -50,16 +50,6 @@ def dostop(sektor):
     stolpci_sektorja = ", ".join(stolpci)
     sez = stolpci_sektorja.split(', ')
     sql = '''SELECT {} FROM Oseba'''.format(stolpci_sektorja)
-##    for x in con.execute(sql):
-##        x = dict(x)
-##        niz = ''
-##        for i in range(len(sez)):
-##            nekej = x[sez[i]]
-##            if nekej == None:
-##                nekej = ''            
-##            niz += str(nekej)+',' #str zaradi izobrazbe
-##        
-##        print(niz)
     return (list(con.execute(sql)), stolpci)
 
 def dodajOsebo(ime, priimek, spol, datumR, datumS, regija, status, stan, izobrazba):
@@ -91,8 +81,8 @@ def sektorIzStevilke(id):
 
 
 def uporabnik():
-    sql = ''' select *
-              from Uporabnik'''
+    sql = ''' SELECT *
+              FROM Uporabnik'''
     
     stolpci=['Uporabniško_ime', 'Geslo', 'Sektor']
     return (list(con.execute(sql)),stolpci)
@@ -105,6 +95,11 @@ def odstraniUporabnika(upIme):
     con.execute(sql,[upIme])
     con.commit()
 
+def poizvedba(sql, sektor):
+    ime_sektorja = sektorIzStevilke(sektor)
+    sez, stolpci = dostop(ime_sektorja)
+    return (list(con.execute(sql)), stolpci)
+    
     
 ##import datatime
 ##

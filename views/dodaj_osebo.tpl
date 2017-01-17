@@ -5,8 +5,6 @@
     position:center;
     top: 40%;
     left: 35%;
-    margin-top: -16em; /*set to a negative number 1/2 of your height*/
-    margin-left: -15em; /*set to a negative number 1/2 of your width*/
     border: 2px solid #000000;	
     background-color: #ffffff;
 }

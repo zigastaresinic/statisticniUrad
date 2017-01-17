@@ -74,12 +74,14 @@ def kon():
 def vpisiSQL(id):
     if int(id) != sess.read('sektor'):
         return redirect('/')
-    return template('vpisi_SQL',stSektorja = id)
+    return template('vpisi_SQL',stSektorja = id, aliIzpisem = False)
 
 @post('/<id:int>/vpisi_SQL/')
 def vpisiSQLp(id):
-    return template('vpisi_SQL')
-#https://bottlepy.org/docs/dev/tutorial.html#id3
+    iskanje = request.forms.SQL
+    izpis, stolpci = modeli.poizvedba(iskanje, id)
+    return template('vpisi_SQL', stSektorja = id, izpis = izpis, stolpci = stolpci, aliIzpisem = True)
+
 
 @route('/<id:int>/baza_osebe/')
 def poglejBazo(id):
