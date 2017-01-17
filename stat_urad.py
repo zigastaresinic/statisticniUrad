@@ -98,4 +98,31 @@ def poglejBazoUporabnika():
         
     return template('baza_uporabniki', izpis=izpis, stolpci=stolpci, stSektorja=4)
 
+@post('/4/baza_uporabniki/')
+def odstraniUporabnika1():
+    upIme = request.forms.upime
+    modeli.odstraniUporabnika(upIme)           
+    return redirect('/4/baza_uporabniki/')
+
+@route('/4/dodaj_osebo/')
+def dodaj_osebo():
+    return template('dodaj_osebo')
+
+
+@post('/4/dodaj_osebo/')
+def dodaj_osebo1():
+    ime = request.forms.ime
+    priimek = request.forms.priimek
+    spol = request.forms.spol
+    datumR = request.forms.datumR
+    datumS = request.forms.datumS
+    regija = request.forms.regija
+    status = request.forms.status
+    stan = request.forms.stan
+    izobrazba = request.forms.izobrazba
+    if datumS == '':
+        datumS = None
+    modeli.dodajOsebo(ime, priimek, spol, datumR, datumS, regija, status, stan, izobrazba)            
+    return redirect('/4/dodaj_osebo/')
+
 run(debug = True)

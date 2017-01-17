@@ -37,32 +37,7 @@
 		line-height: 1.33;
 		border-radius: 35px;
 	}
-		
-	/* HORIZONTAL */
-	@keyframes horizontal {
-		0%{transform:translate(0,0)}
-		6%{transform:translate(5px,0)}
-		12%{transform:translate(0,0)}
-		18%{transform:translate(5px,0)}
-		24%{transform:translate(0,0)}
-		30%{transform:translate(5px,0)}
-		36%,100%{transform:translate(0,0)}
-	}
-	.faa-horizontal.animated,
-	.faa-horizontal.animated-hover:hover,
-	.faa-parent.animated-hover:hover > .faa-horizontal {
-		animation: horizontal 2s ease infinite;
-	}
-	.faa-horizontal.animated.faa-fast,
-	.faa-horizontal.animated-hover.faa-fast:hover,
-	.faa-parent.animated-hover:hover > .faa-horizontal.faa-fast {
-		animation: horizontal 1s ease infinite;
-	}
-	.faa-horizontal.animated.faa-slow,
-	.faa-horizontal.animated-hover.faa-slow:hover,
-	.faa-parent.animated-hover:hover > .faa-horizontal.faa-slow {
-		animation: horizontal 3s ease infinite;
-	}
+	
 	/* BOUNCE */
 	@keyframes bounce {
 		0%,10%,20%,50%,80%,100%{transform:translateY(0)}
@@ -85,27 +60,6 @@
 		animation: bounce 3s ease infinite;
 	}
 
-	/* FLOAT */
-	@keyframes float{
-		0%{transform: translateY(0)}
-		50%{transform: translateY(-6px)}
-		100%{transform: translateY(0)}
-	}
-	.faa-float.animated,
-	.faa-float.animated-hover:hover,
-	.faa-parent.animated-hover:hover > .faa-float {
-		animation: float 2s linear infinite;
-	}
-	.faa-float.animated.faa-fast,
-	.faa-float.animated-hover.faa-fast:hover,
-	.faa-parent.animated-hover:hover > .faa-float.faa-fast {
-		animation: float 1s linear infinite;
-	}
-	.faa-float.animated.faa-slow,
-	.faa-float.animated-hover.faa-slow:hover,
-	.faa-parent.animated-hover:hover > .faa-float.faa-slow {
-		animation: float 3s linear infinite;
-	}
 	/* PULSE */
 	@keyframes pulse {
 		0% {transform: scale(1.1)}

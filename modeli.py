@@ -93,11 +93,18 @@ def sektorIzStevilke(id):
 def uporabnik():
     sql = ''' select *
               from Uporabnik'''
-            
-              
-
+    
     stolpci=['Uporabniško_ime', 'Geslo', 'Sektor']
     return (list(con.execute(sql)),stolpci)
+
+
+def odstraniUporabnika(upIme):
+    sql = ''' DELETE from Uporabnik
+              WHERE Uporabniško_ime = ? '''
+
+    con.execute(sql,[upIme])
+    con.commit()
+
     
 ##import datatime
 ##
