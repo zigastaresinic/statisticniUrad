@@ -36,9 +36,7 @@ def prijava(upIme, geslo):
     #ce je none ali ne
     return pravo
 
-
-
-def dostop(sektor):
+def stolpci(sektor):
     sql = ''' select Stolpci.Ime
               from Stolpci
               join Sektor_pravice on Stolpci.Id = Sektor_pravice.Stolpec
@@ -47,10 +45,15 @@ def dostop(sektor):
               '''
 
     stolpci = [r[0] for r in con.execute(sql, [sektor]).fetchall()]
-    stolpci_sektorja = ", ".join(stolpci)
+    return stolpci
+
+
+def dostop(sektor):
+    stolp = stolpci(sektor)
+    stolpci_sektorja = ", ".join(stolp)
     sez = stolpci_sektorja.split(', ')
     sql = '''SELECT {} FROM Oseba'''.format(stolpci_sektorja)
-    return (list(con.execute(sql)), stolpci)
+    return (list(con.execute(sql)), stolp)
 
 def dodajOsebo(ime, priimek, spol, datumR, datumS, regija, status, stan, izobrazba):
     #za admina
@@ -95,10 +98,32 @@ def odstraniUporabnika(upIme):
     con.execute(sql,[upIme])
     con.commit()
 
-def poizvedba(sql, sektor):
-    ime_sektorja = sektorIzStevilke(sektor)
-    sez, stolpci = dostop(ime_sektorja)
+def poizvedba(stolpci, where, groupby, having, orderby,pomozen):
+    stolpci_sektorja = ", ".join(stolpci)
+    sql = '''SELECT {} FROM Oseba'''.format(stolpci_sektorja) #zacetek
+    if where != '':
+        #sql += ''' WHERE ?'''
+        sql += ''' WHERE {0}'''.format(where)
+    if len(groupby) != 0:
+        gb = ",".join(groupby)
+        sql += ''' GROUP BY {0} '''.format(gb)
+    if having != '':
+        #sql += ''' HAVING ?'''
+        sql += ''' HAVING {0}'''.format(having)
+    if len(orderby) != 0:
+        ob = ",".join(orderby)
+        sql += '''ORDER BY {0} {1}'''.format(ob, pomozen)
+    sql += ''';'''
+##    if where =='' and having == '':
+##        return (list(con.execute(sql)), stolpci, sql)
+##    elif where == '' and having != '':
+##        return (list(con.execute(sql,[having])), stolpci, sql)
+##    elif where != '' and having == '':
+##        return (list(con.execute(sql,[where])), stolpci, sql)
+##    else:
+##        return (list(con.execute(sql,[where, having])), stolpci, sql)
     return (list(con.execute(sql)), stolpci)
+
     
     
 ##import datatime

@@ -74,14 +74,30 @@ def kon():
 def vpisiSQL(id):
     if int(id) != sess.read('sektor'):
         return redirect('/')
-    return template('vpisi_SQL',stSektorja = id, aliIzpisem = False)
+    ime_sektorja = modeli.sektorIzStevilke(id)
+    stolpci = modeli.stolpci(ime_sektorja)
+    return template('vpisi_SQL', stSektorja = id,stolpci = stolpci, aliIzpisem = False)
 
 @post('/<id:int>/vpisi_SQL/')
 def vpisiSQLp(id):
-    iskanje = request.forms.SQL
-    izpis, stolpci = modeli.poizvedba(iskanje, id)
-    return template('vpisi_SQL', stSektorja = id, izpis = izpis, stolpci = stolpci, aliIzpisem = True)
+    ime_sektorja = modeli.sektorIzStevilke(id)
+    stolpci = modeli.stolpci(ime_sektorja)
+    selectStolpci = request.forms.getall('selectStolpci')
+    pogojWhere = request.forms.PogojWhere
+    selectGroupBy = request.forms.getall('selectGroupBy')
+    pogojHaving = request.forms.PogojHaving
+    selectOrderBy = request.forms.getall('selectOrderBy')
+    pomozen = request.forms.selectOrderByPomozen
+    izpis = modeli.poizvedba(selectStolpci, pogojWhere, selectGroupBy, pogojHaving,
+                             selectOrderBy, pomozen)
+    #print(pogojHaving)
+    #print(izpis[0])
+    #print(izpis[2])
+    return template('vpisi_SQL', stSektorja = id, stolpci = stolpci, baza = izpis[0], stol = izpis[1], aliIzpisem = True)
 
+@route('/<id:int>/dodaj_SQL/')
+def dodajSQL(id):
+    return template('dodaj_SQL', stSektorja = id)
 
 @route('/<id:int>/baza_osebe/')
 def poglejBazo(id):
@@ -95,9 +111,7 @@ def poglejBazo(id):
 def poglejBazoUporabnika():
     if 4 != sess.read('sektor'):
         return redirect('/')
-    izpis, stolpci = modeli.uporabnik()
-    b = 'base_admin'
-        
+    izpis, stolpci = modeli.uporabnik()        
     return template('baza_uporabniki', izpis=izpis, stolpci=stolpci, stSektorja=4)
 
 @post('/4/baza_uporabniki/')
