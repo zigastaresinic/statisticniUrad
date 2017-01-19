@@ -90,9 +90,6 @@ def vpisiSQLp(id):
     pomozen = request.forms.selectOrderByPomozen
     izpis = modeli.poizvedba(selectStolpci, pogojWhere, selectGroupBy, pogojHaving,
                              selectOrderBy, pomozen)
-    #print(pogojHaving)
-    #print(izpis[0])
-    #print(izpis[2])
     return template('vpisi_SQL', stSektorja = id, stolpci = stolpci, baza = izpis[0], stol = izpis[1], aliIzpisem = True)
 
 @route('/<id:int>/dodaj_SQL/')

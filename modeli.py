@@ -112,7 +112,7 @@ def poizvedba(stolpci, where, groupby, having, orderby,pomozen):
         sql += ''' HAVING {0}'''.format(having)
     if len(orderby) != 0:
         ob = ",".join(orderby)
-        sql += '''ORDER BY {0} {1}'''.format(ob, pomozen)
+        sql += ''' ORDER BY {0} {1}'''.format(ob, pomozen)
     sql += ''';'''
 ##    if where =='' and having == '':
 ##        return (list(con.execute(sql)), stolpci, sql)
