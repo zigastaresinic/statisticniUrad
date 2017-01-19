@@ -138,4 +138,18 @@ def dodaj_osebo1():
     modeli.dodajOsebo(ime, priimek, spol, datumR, datumS, regija, status, stan, izobrazba)            
     return redirect('/4/dodaj_osebo/')
 
+@route('/<id:int>/spremeni_geslo/')
+def spremeniGeslo(id):
+    return template('spremeni_geslo', stSektorja=id)
+
+@post('/<id:int>/spremeni_geslo/')
+def spremeniGeslo1(id):
+    staro_geslo = request.forms.staro
+    novo_geslo= request.forms.novo  
+    ponovi_geslo = request.forms.ponovi
+    a = sess.read('upIme')
+    if staro_geslo and novo_geslo and ponovi_geslo:
+        modeli.spremeni_geslo(a, staro_geslo, novo_geslo, ponovi_geslo)            
+    return redirect('/{0}/spremeni_geslo/'.format(id))
+
 run(debug = True)

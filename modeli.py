@@ -116,6 +116,25 @@ def poizvedba(stolpci, where, groupby, having, orderby,pomozen):
     sql += ''';'''
     return (list(con.execute(sql)), stolpci)
 
+
+def spremeni_geslo(uporabnik, staro_geslo, novo_geslo, ponovi_geslo):
+    sql = ''' SELECT Geslo
+              FROM Uporabnik
+              WHERE Uporabniško_ime = ? ;'''
+    geslo = con.execute(sql, [uporabnik]).fetchone()['Geslo']
+    if koda_gesla(staro_geslo) == geslo:
+        if novo_geslo == ponovi_geslo:
+            novo = koda_gesla(novo_geslo)
+            sql2 = ''' UPDATE Uporabnik
+                       SET Geslo = ?
+                       WHERE Uporabniško_ime = ? ;'''
+            
+            con.execute(sql2, [novo, uporabnik])
+            con.commit()
+        else:
+            raise Exception('Novo geslo se ne ujema!')
+    else:
+        raise Exception('Staro geslo se ne ujema!')
     
     
 ##import datatime

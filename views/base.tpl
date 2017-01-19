@@ -50,7 +50,10 @@ tr:nth-child(odd){background-color: ##d8d4d4;}
 <h1 style = "float:left; width:auto;">{{dobrodoslica}}</h1>
 </div>
 <div style="float:right;">
-	<a href="/odjava/"><button type="button" class="btn btn-default btn-block">Odjava</button></a>
+	<a href="/odjava/"><button style="float:right;" type="button" class="btn btn-default btn-block">Odjava</button></a>
+	<br>
+	<br>
+	<a href="/{{stSektorja}}/spremeni_geslo/"><button type="button" class="btn btn-default btn-block">Spremeni geslo</button></a>
 </div>
 <br>
 <br>
