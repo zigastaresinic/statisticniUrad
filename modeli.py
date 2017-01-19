@@ -102,26 +102,18 @@ def poizvedba(stolpci, where, groupby, having, orderby,pomozen):
     stolpci_sektorja = ", ".join(stolpci)
     sql = '''SELECT {} FROM Oseba'''.format(stolpci_sektorja) #zacetek
     if where != '':
-        #sql += ''' WHERE ?'''
-        sql += ''' WHERE {0}'''.format(where)
+        if 'SELECT' not in where and 'INSERT' not in where and 'DELETE' not in where:
+            sql += ''' WHERE {0}'''.format(where)
     if len(groupby) != 0:
         gb = ",".join(groupby)
         sql += ''' GROUP BY {0} '''.format(gb)
     if having != '':
-        #sql += ''' HAVING ?'''
-        sql += ''' HAVING {0}'''.format(having)
+        if 'SELECT' not in having and 'INSERT' not in having and 'DELETE' not in having:
+            sql += ''' HAVING {0}'''.format(having)
     if len(orderby) != 0:
         ob = ",".join(orderby)
         sql += ''' ORDER BY {0} {1}'''.format(ob, pomozen)
     sql += ''';'''
-##    if where =='' and having == '':
-##        return (list(con.execute(sql)), stolpci, sql)
-##    elif where == '' and having != '':
-##        return (list(con.execute(sql,[having])), stolpci, sql)
-##    elif where != '' and having == '':
-##        return (list(con.execute(sql,[where])), stolpci, sql)
-##    else:
-##        return (list(con.execute(sql,[where, having])), stolpci, sql)
     return (list(con.execute(sql)), stolpci)
 
     
