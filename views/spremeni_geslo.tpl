@@ -13,24 +13,19 @@
 
 	<div class="col-xs-12" style="height:50px;"></div>
 	<div class="row">
-		<div class="col-md-1"><p class="text-right">Staro geslo:</p> </div>
-		<div class="col-md-6"><input type="password" class="form-control" style="width: 50%" name="staro" /> </div>
-		<div class="col-xs-12" style="height:3px;"></div>
-	</div>
-	<div class="row">
-		<div class="col-md-1"><p class="text-right">Novo geslo:</p> </div>
-		<div class="col-md-6"><input type="password" class="form-control" style="width: 50%" name="novo" /> </div>	
-		<div class="col-xs-12" style="height:3px;"></div>
-	</div>
+		<div class="col-md-2"><p class="text-right">Staro geslo:</p> </div>
+		<div class="col-md-8"><input type="password" class="form-control" style="width: 50%" name="staro" /> </div>
+		<div class="col-xs-12" style="height:7px;"></div>
 	
-	<div class="row">
-		<div class="col-md-1"><p class="text-right">Ponovi geslo:</p> </div>
-		<div class="col-md-6"><input type="password" class="form-control" style="width: 50%" name="ponovi" /> </div>	
-		<div class="col-xs-12" style="height:3px;"></div>
+		<div class="col-md-2"><p class="text-right">Novo geslo:</p> </div>
+		<div class="col-md-8"><input type="password" class="form-control" style="width: 50%" name="novo" /> </div>	
+		<div class="col-xs-12" style="height:7px;"></div>
+	
+		<div class="col-md-2"><p class="text-right">Ponovi geslo:</p> </div>
+		<div class="col-md-8"><input type="password" class="form-control" style="width: 50%" name="ponovi" /> </div>	
+		<div class="col-xs-12" style="height:7px;"></div>
 	</div>
-	
-	
-	<div class="col-xs-12" style="height:30px;"></div>
+
 	
 	<div class="row">
 		<div class="container">

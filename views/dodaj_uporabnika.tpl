@@ -14,27 +14,24 @@
 	<div class="col-xs-12" style="height:50px;"></div>
 	<div class="row">
 		<div class="col-md-1"><p class="text-right">Uporabnik:</p> </div>
-		<div class="col-md-6"><input type="text" class="form-control" style="width: 50%" name="uporabnik" /> </div>
-		<div class="col-xs-12" style="height:3px;"></div>
-	</div>
-	<div class="row">
+		<div class="col-md-10"><input type="text" class="form-control" style="width: 50%" name="uporabnik" /> </div>
+		<div class="col-xs-12" style="height:7px;"></div>
+	
 		<div class="col-md-1"><p class="text-right">Geslo:</p> </div>
-		<div class="col-md-6"><input type="password" class="form-control" style="width: 50%" name="geslo" /> </div>	
-		<div class="col-xs-12" style="height:3px;"></div>
-	</div>
+		<div class="col-md-10"><input type="password" class="form-control" style="width: 50%" name="geslo" /> </div>	
+		<div class="col-xs-12" style="height:7px;"></div>
 	
-	<div class="row">
 		<div class="col-md-1"><p class="text-right">Sektor:</p> </div>
-		<div class="col-md-6"><select class = "form-control" style = "width: 50%" name="sektor">
-		<option selected disabled hidden>Izberi sektor</option>
-		<option value = "1">Prebivalstvo</option>
-		<option value = "2">Izobraževanje</option>
-		<option value = "3">Delo</option>
-		<option value = "4">Admin</option>
-		</select></div>
+		<div class="col-md-10">
+			<select class = "form-control" style = "width: 50%" name="sektor">
+				<option selected disabled hidden>Izberi sektor</option>
+				<option value = "1">Prebivalstvo</option>
+				<option value = "2">Izobraževanje</option>
+				<option value = "3">Delo</option>
+				<option value = "4">Admin</option>
+			</select>
+		</div>
 	</div>
-	
-	<div class="col-xs-12" style="height:30px;"></div>
 	
 	<div class="row">
 		<div class="container">
@@ -43,5 +40,7 @@
 			</button>
 		</div>
 	</div>
+	
+
 </form>
 </div>

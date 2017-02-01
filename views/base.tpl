@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
 <style>
 body   {
 	background-image: url("/static/stat_ana.png");
+	background-size: 2000px 1000px;
 	}
 
-.naslov {
-	margin-left:30%;
-	text-align:center;
-	font-family:"Times New Roman";
-	font-weight: bold;
-	width: 1000px;
-}
 ul {
     list-style-type: none;
 	margin:0;
@@ -29,14 +29,18 @@ li a {
 	text-align:center;
 	margin:auto;
 	padding: 12px;
-    width:140px;
-	height:12px;
-    text-decoration: none;
+    width:180px;
 }
 
 li a:hover {
-    background-color: blue;
+    background-color: #20B2AA;
     color: white;
+	text-decoration: none;
+	text-align:center;
+}
+
+li a:visited {
+    background-color: #20B2AA;
 }
 	
 tr:nth-child(even){background-color: #c4c2c2;} <!--Vsak drugi je malo drugačne barve (za v tabelo)-->
@@ -45,28 +49,35 @@ tr:nth-child(odd){background-color: ##d8d4d4;}
 </style>
 </head>
 
-<body>
-<div class = "naslov">
-<h1 style = "float:left; width:auto;">{{dobrodoslica}}</h1>
+<div class="col-md-12" style="background-color:#20B2AA; height:130px">
+	
+	<h1 style = "float:center; font-family:'segoe script">
+		<img src="/static/{{stSektorja}}.png" width="110" height="90"></img>
+		{{dobrodoslica}}
+		<div style="float:right;">
+			<a href="/odjava/"><button style="float:right;" type="button" class="btn btn-default btn-block">Odjava</button></a>
+			<br>
+			<a href="/{{stSektorja}}/spremeni_geslo/"><button style="float:right;" type="button" class="btn btn-default btn-block">Spremeni geslo</button></a>
+		</div>
+	</h1>
 </div>
-<div style="float:right;">
-	<a href="/odjava/"><button style="float:right;" type="button" class="btn btn-default btn-block">Odjava</button></a>
-	<br>
-	<br>
-	<a href="/{{stSektorja}}/spremeni_geslo/"><button type="button" class="btn btn-default btn-block">Spremeni geslo</button></a>
-</div>
+
+
+
+
 <br>
 <br>
 <br>
-<hr size = "5" style="width:100%; float: left;" color = '#000000' />
+
 <div>
 <div style="margin-top:1%; width: 180px; float: left;">
 <ul>
   <li><a href="/{{stSektorja}}/vpisi_SQL/">Vpiši SQL</a></li>
   <div style='height:2px; width:140px;'></div>
-  <li><a href="/{{stSektorja}}/baza_osebe/">Baza oseb</a></li>
-  <div style='height:2px; width:140px;'></div>
   <li><a href="/{{stSektorja}}/dodaj_SQL/">Dodaj SQL</a></li>
+  <div style='height:2px; width:140px;'></div>
+  <li><a href="/{{stSektorja}}/baza_osebe/">Baza oseb</a></li>
+  
 %if stSektorja == 4:
   <div style='height:2px; width:140px;'></div>
   <li><a href="/{{stSektorja}}/dodaj_osebo/">Dodaj osebo</a></li>
